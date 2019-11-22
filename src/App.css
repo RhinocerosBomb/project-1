@@ -1,0 +1,105 @@
+.App {
+  background: #3FEEE6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.App-Content {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.Pages-Container {
+  height: 70vh;
+}
+
+.Pagination {
+  margin-top: 30px;
+}
+
+
+.Page {
+  background: #CAFAFE;
+  height: 50vh;
+  width: 100%;
+  padding: 2em;
+  box-shadow: -5px 11px 19px 2px #888888;
+}
+
+.Page--visible {
+  display: block;
+  -webkit-animation-name: pageEnter; 
+  -webkit-animation-duration: 1s;
+  animation-name: pageEnter;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+.Page--hidden {
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+  -webkit-animation-name: pageExit; 
+  -webkit-animation-duration: 1s;
+  animation-name: pageExit;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+.Pagination-Button {
+  background-color: #55BCC9; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.Pagination-Button:disabled {
+  background: #dddddd;
+  cursor: not-allowed;
+}
+
+.Pagination-Button--back {
+  float: left;
+}
+
+.Pagination-Button--next {
+  float: right;
+}
+
+.Pagination-Button--hidden {
+  display: none;
+}
+
+@-webkit-keyframes pageEnter {
+  from {transform: translateX(-100vh); height: 0;}
+  to {transform: translateX(0); height: 100%; padding: 2em;}
+}
+
+@keyframes pageEnter {
+  from {transform: translateX(-100vh); height: 0;}
+  to {transform: translateX(0); height: 100%; padding: 2em;}
+}
+
+@-webkit-keyframes pageExit {
+  from {transform: translateX(0); visibility: visible; opacity: 1; height: 100%;}
+  to {transform: translateX(100vh); visibility: hidden; opacity: 0; height: 0}
+}
+
+@keyframes pageExit {
+  from {transform: translateX(0); visibility: visible; opacity: 1; height: 100%;}
+  to {transform: translateX(100vh); visibility: hidden; opacity: 0; height: 0}
+}
